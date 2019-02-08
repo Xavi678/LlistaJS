@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="UTF-8"/>
+    <title>Pràctica Final DOM + WebStorage</title>
+    <link type="text/css" href="estils.css" rel="stylesheet"/>
+    <script type="text/javascript" src="script.js" defer="defer"></script>
+   
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+
+  <body>
+
+    <h1>Llistat d'elements:</h1>
+
+    <ol id="llista1" type="1">
+     
+    </ol>
+    
+    <form name="formulari1">
+    
+      <label>Canvia el tipus de llista:</label>      
+      <input class="js-canvia-tipus-llista" 
+             type="button" 
+             value="Canvia a llista no ordenada" />
+
+      <label>Canvia el subtipus de llista:</label>
+      <select id="tipus-ol" class="visible" onchange="tipusOL();">
+        <option value="1">Números</option>
+        <option value="A">Lletres majúscules</option>
+        <option value="a">Lletres minúscules</option>
+        <option value="I">Números romans en majúscules</option>
+        <option value="i">Números romans en minúscules</option>
+      </select>
+      
+      <select id="tipus-ul" class="ocult">
+        <option value="">Llista vertical</option>
+        <option value="menu">Llista horitzontal</option>
+      </select>
+      
+      <label>Afegeix un item:</label>
+      <input class="js-afegir-inici-llista flotant" 
+             type="button" 
+             value="A l'inici de la llista" onclick="Inici();"/>
+      <input class="js-afegir-final-llista" 
+             type="button" 
+             value="Al final de la llista"  onclick="afegir();"/>
+      <input class="js-esborrar-llista" 
+             type="button" 
+             value="Esborra la llista" onclick="Esborrar();"/>
+      
+    </form>
+
+    
+  </body>
+</html>

@@ -1,0 +1,11 @@
+Fent servir les funcions de DOM i WebStorage elabora un script que permeti el següent:
+
+1) [1 punt] En fer clic a la icona "+" s'ha de poder afegir un element a la llista a continuació de l'element actual (demanar el valor en un prompt)
+2) [1 punt] En fer clic a la icona "-" s'ha de poder eliminar l'element acutal
+3) [1 punt] En fer clic al botó "Canvia a llista no ordenada" s'ha de canvia la llista "ol" a "ul" manenint els elments que conté i modificar el text del botó per "Canviar a llista ordenada"; el comportament del botó ara haurà de ser el que indica, és a dir, canviar la "ul" a "ol", tornant a modificar el missatge del botó per l'original.
+4) [1 punt] En canviar d'opció al select, s'ha de modificar el valor de l'atribut type de la llista.
+5) [1 punt] En fer clic al botó "A l'inici de la llista" s'haurà d'afegir un nou item a l'inici de la llista.
+6) [1 punt] En fer clic al botó "A l'inici de la llista" s'haurà d'afegir un nou item al final de la llista.
+7) [1 punt] En fer clic al botó "Esborra llista" s'ha d'esborrar el contingut de la llista
+8) [3 punts] Implementar la pàgina amb WebStorage de tal manera que en tornar a obrir-la es mostri igual que va quedar en tancar-se.
+
