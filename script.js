@@ -34,11 +34,16 @@ function afegir(){
 if(llista==null){
     llista=[];
 }
-llista.push(el);
+llista.push(el.innerHTML);
 
 localStorage.setItem("llista", JSON.stringify(llista));
-typeof(el);
-llistar(llista);
+
+if(llista.length!=1){
+insertAfter(el, document.getElementById("llista1").lastChild);
+}else{
+    document.getElementById("llista1").insertBefore(el, document.getElementById("llista1").firstChild);
+    
+}
 }
 
 function Inici(){
@@ -64,20 +69,36 @@ function Inici(){
     el.appendChild(img);
     el.appendChild(img2); 
 
+    var llista = JSON.parse(localStorage.getItem("llista"));
+    if(llista==null){
+        llista=[];
+    }
+    llista.push(el.innerHTML);
+    
+    localStorage.setItem("llista", JSON.stringify(llista));
+
     var container = document.getElementById("llista1");
 container.insertBefore(el, container.firstChild);
 }
 
-function llistar(llista){
+function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+window.onload= function llistar(){
 
     
-
+    var llista = JSON.parse(localStorage.getItem("llista"));
 
 for(var i=0;i<llista.length;i++){
-    if(isElement(llista[i])==true){
+    //document.getElementById("llista1");
+   
+        var li=document.createElement("li");
+        li.innerHTML=llista[i];
+        li.id=i;
       
-    document.getElementById("llista1").appendChild(llista[i]);
-    }
+    document.getElementById("llista1").appendChild(li);
+    
   
 
    
@@ -92,11 +113,12 @@ function Esborrar(){
  var llista = JSON.parse(localStorage.getItem("llista"));
  llista.length=0;
 var ol=document.getElementById("llista1");
+localStorage.removeItem("llista");
  while (ol.firstChild) {
     ol.removeChild(ol.firstChild);
 }
 
- llistar(llista);
+ 
 }
 
 function isElement(element) {
@@ -122,6 +144,19 @@ function isElement(element) {
         
   });
 
+  var lis=document.getElementsByTagName("li");
+  if(lis!=null){
+  for(var i=0;i<lis.size;i++){
+      lis[i].id=i;
+      lis[i].firstChild.addEventListener("click",afegirSota(this.parentNode.id));
+  }
+};
+
+
+function afegirSota(id){
+
+    $("#"+id+"").after("<li>Nou</li>");
+}
 
   
  
